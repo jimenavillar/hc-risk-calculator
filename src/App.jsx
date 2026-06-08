@@ -32,9 +32,9 @@ function calcRisk(inputs) {
     BETAS.maternal_height * inputs.maternal_height +
     BETAS.father_age * inputs.father_age +
     (inputs.bmi === "normal" ? 0 : inputs.bmi === "overweight" ? BETAS.bmi2 : BETAS.bmi3) +
-    (inputs.edu === "none_primary" ? 0 : inputs.edu === "secondary" ? BETAS.edu2 : BETAS.edu3) +
+    (inputs.edu === "university" ? BETAS.edu3 : 0) +
     (inputs.married ? BETAS.married : 0) +
-    (inputs.work_outside ? BETAS.work_outside : 0) +
+    (inputs.work_outside ? 0 : BETAS.work_outside) +
     (inputs.smoke ? BETAS.smoke : 0) +
     (inputs.births_num === 0 ? 0 : inputs.births_num === 1 ? BETAS.birth2 : inputs.births_num === 2 ? BETAS.birth3 : BETAS.birth4) +
     (inputs.diabetes ? BETAS.diabetes : 0) +
@@ -45,7 +45,7 @@ function calcRisk(inputs) {
     (inputs.kidney ? BETAS.kidney : 0) +
     (inputs.malaria ? BETAS.malaria : 0) +
     (inputs.tb ? BETAS.tb : 0);
-  return 1 / (1 + Math.exp(logit));
+  return 1 / (1 + Math.exp(-logit));
 }
 
 const defaultInputs = {
