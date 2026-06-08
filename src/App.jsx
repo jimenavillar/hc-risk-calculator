@@ -227,8 +227,8 @@ export default function App() {
   return (
     <div style={{ maxWidth: 560, margin: "0 auto", padding: "1.5rem 1rem" }}>
       <div style={{ marginBottom: "1.5rem" }}>
-        <h2 style={{ fontSize: 18, fontWeight: 500, margin: "0 0 4px", color: "var(--color-text-primary)" }}>Low Birth Weight Risk Calculator</h2>
-        <p style={{ fontSize: 13, color: "var(--color-text-secondary)", margin: 0 }}>Enter patient details to estimate LBW risk</p>
+        <h2 style={{ fontSize: 18, fontWeight: 500, margin: "0 0 4px", color: "var(--color-text-primary)" }}>Early Faltering Growth Risk Calculator</h2>
+        <p style={{ fontSize: 13, color: "var(--color-text-secondary)", margin: 0 }}>Enter patient details to estimate EFG risk</p>
       </div>
 
       <ProgressBar step={step} />
